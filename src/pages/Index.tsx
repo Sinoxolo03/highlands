@@ -1,3 +1,4 @@
+// src/pages/Index.tsx
 import Hero from "@/components/Hero";
 import PropertyCard from "@/components/PropertyCard";
 import ContactFooter from "@/components/ContactFooter";

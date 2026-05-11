@@ -1,3 +1,4 @@
+// src/components/Hero.tsx
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 

@@ -1,3 +1,4 @@
+// src/components/ContactFooter.tsx
 import { Phone, MapPin, Facebook, Mail } from "lucide-react";
 
 const ContactFooter = () => {
@@ -24,8 +25,8 @@ const ContactFooter = () => {
             </div>
             <div>
               <h3 className="font-semibold text-lg mb-1">Email</h3>
-              <a href="mailto:jje.erasmus@gmail.com" className="hover:text-accent transition-colors">
-                jje.erasmus@gmail.com
+              <a href="mailto:jje@ralwin.co.za" className="hover:text-accent transition-colors">
+                jje@ralwin.co.za
               </a>
             </div>
           </div>

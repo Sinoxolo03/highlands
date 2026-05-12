@@ -79,7 +79,7 @@ const ContactFooter = () => {
         {/* Copyright */}
         <div className="border-t border-primary-foreground/20 pt-6 text-center">
           <p className="text-primary-foreground/80">
-            © 2026 Jonathan's Properties. All rights reserved.
+            © 2026 Pro Property Scheme Management. All rights reserved.
           </p>
         </div>
       </div>

@@ -39,7 +39,7 @@ const ContactFooter = () => {
             </div>
             <div>
               <h3 className="font-semibold text-lg mb-1">Address</h3>
-              <p>04 Western Rd, Gqeberha, South Africa</p>
+              <p>Gqeberha, South Africa</p>
             </div>
           </div>
         </div>

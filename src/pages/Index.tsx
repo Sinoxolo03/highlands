@@ -1,6 +1,7 @@
 // src/pages/Index.tsx
 import Hero from "@/components/Hero";
 import PropertyCard from "@/components/PropertyCard";
+import EnquirySection from "@/components/EnquirySection";
 import ContactFooter from "@/components/ContactFooter";
 import { useState } from "react";
 
@@ -167,7 +168,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-
+        <EnquirySection />
         <ContactFooter />
       </div>
   );

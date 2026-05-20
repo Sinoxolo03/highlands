@@ -1,13 +1,4 @@
 // src/lib/emailjs.ts
-import emailjs from '@emailjs/browser';
-
-// Your EmailJS credentials (replace with your actual values)
-const SERVICE_ID = 'service_dk7bgbx';     // e.g., 'service_dk7bgbx'
-const TEMPLATE_ID = 'template_v6k9671';   // e.g., 'template_abc123'
-const PUBLIC_KEY = 'L2eNVu0CSulfh0rxd';     // Your public key from EmailJS
-
-// Both email addresses that will receive the enquiry
-const TO_EMAILS = 'jje@ralwin.co.za, jwdevelopments9@ralwin.co.za';
 
 export const sendEnquiry = async (formData: {
   full_name: string;
@@ -17,22 +8,37 @@ export const sendEnquiry = async (formData: {
   message: string;
 }) => {
   try {
-    // Add the recipient emails to the template params
-    const templateParams = {
-      ...formData,
-      to_email: TO_EMAILS,
-    };
+    const response = await fetch(
+      'https://api.web3forms.com/submit',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+body: JSON.stringify({
+  access_key: "0d6a8af5-b473-49eb-a019-2a31835bea0b",
 
-    const response = await emailjs.send(
-      SERVICE_ID,
-      TEMPLATE_ID,
-      templateParams,
-      PUBLIC_KEY
+  subject: `New Enquiry - ${formData.property_name}`,
+
+  name: formData.full_name,
+  phone: formData.phone_number,
+  institution: formData.institution,
+  property: formData.property_name,
+  message: formData.message,
+}),
+      }
     );
 
-    return { success: true, response };
+    const result = await response.json();
+
+    if (result.success) {
+      return { success: true };
+    } else {
+      return { success: false, error: result };
+    }
   } catch (error) {
-    console.error('EmailJS Error:', error);
+    console.error('Web3Forms Error:', error);
     return { success: false, error };
   }
 };
